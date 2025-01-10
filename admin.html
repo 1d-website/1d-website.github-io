@@ -11,6 +11,22 @@
     <script src="firebase-config.js"></script>
     <base href="/">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dbRef = firebase.database().ref('/2025');
+            dbRef.once('value', (snapshot) => {
+                const data = snapshot.val();
+                const homeworkListDiv = document.getElementById('homeworkList');
+                homeworkListDiv.innerHTML = '';
+                for (const key in data) {
+                    const homework = data[key];
+                    const homeworkElement = document.createElement('div');
+                    homeworkElement.innerHTML = `<h2>${key}</h2><p>${homework}</p>`;
+                    homeworkListDiv.appendChild(homeworkElement);
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="sidebar">
