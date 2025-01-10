@@ -20,6 +20,8 @@
             padding: 20px;
             height: 100vh;
             position: fixed;
+            top: 0;
+            left: 0;
         }
         .sidebar button {
             width: 100%;
@@ -30,7 +32,15 @@
         }
         .container {
             margin-left: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% - 80px);
+            height: 100vh;
+        }
+        .content {
             max-width: 800px;
+            width: 100%;
             padding: 20px;
         }
     </style>
@@ -44,15 +54,17 @@
         <button onclick="location.href='/admin.html'"><span class="material-icons">admin_panel_settings</span></button>
     </div>
     <div class="container">
-        <header>
-            <h1>Form</h1>
-        </header>
-        <main>
-            <div id="forms"></div>
-        </main>
-        <footer>
-            <!-- 版權聲明已移除 -->
-        </footer>
+        <div class="content">
+            <header>
+                <h1>Form</h1>
+            </header>
+            <main>
+                <div id="forms"></div>
+            </main>
+            <footer>
+                <!-- 版權聲明已移除 -->
+            </footer>
+        </div>
     </div>
 </body>
 </html>

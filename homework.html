@@ -33,7 +33,15 @@
         }
         .container {
             margin-left: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% - 80px);
+            height: 100vh;
+        }
+        .content {
             max-width: 800px;
+            width: 100%;
             padding: 20px;
         }
         .btn {
@@ -54,12 +62,14 @@
         <button onclick="location.href='/admin.html'"><span class="material-icons">admin_panel_settings</span></button>
     </div>
     <div class="container">
-        <header>
-            <h1>Homework Details</h1>
-        </header>
-        <main>
-            <div id="homeworkDetails"></div>
-        </main>
+        <div class="content">
+            <header>
+                <h1>Homework Details</h1>
+            </header>
+            <main>
+                <div id="homeworkDetails"></div>
+            </main>
+        </div>
     </div>
     <script src="homework.js"></script>
 </body>

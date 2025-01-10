@@ -34,7 +34,15 @@
         }
         .container {
             margin-left: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% - 80px);
+            height: 100vh;
+        }
+        .content {
             max-width: 800px;
+            width: 100%;
             padding: 20px;
         }
         .form-group {
@@ -62,39 +70,41 @@
         <button onclick="location.href='/admin.html'"><span class="material-icons">admin_panel_settings</span></button>
     </div>
     <div class="container">
-        <header class="my-4">
-            <h1 class="text-center">Homework List</h1>
-        </header>
-        <main>
-            <div id="calendar-controls" class="d-flex justify-content-center my-4">
-                <div class="form-group mx-2">
-                    <label for="year">Year:</label>
-                    <select id="year" class="form-control">
-                        <option value="2024">2024</option>
-                        <option value="2025">2025</option>
-                    </select>
+        <div class="content">
+            <header class="my-4">
+                <h1 class="text-center">Homework List</h1>
+            </header>
+            <main>
+                <div id="calendar-controls" class="d-flex justify-content-center my-4">
+                    <div class="form-group mx-2">
+                        <label for="year">Year:</label>
+                        <select id="year" class="form-control">
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                        </select>
+                    </div>
+                    <div class="form-group mx-2">
+                        <label for="month">Month:</label>
+                        <select id="month" class="form-control">
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                        </select>
+                    </div>
+                    <button id="generate-calendar" class="btn btn-success mx-2">Generate Calendar</button>
                 </div>
-                <div class="form-group mx-2">
-                    <label for="month">Month:</label>
-                    <select id="month" class="form-control">
-                        <option value="10">October</option>
-                        <option value="11">November</option>
-                        <option value="12">December</option>
-                        <option value="01">January</option>
-                        <option value="02">February</option>
-                        <option value="03">March</option>
-                        <option value="04">April</option>
-                        <option value="05">May</option>
-                        <option value="06">June</option>
-                        <option value="07">July</option>
-                        <option value="08">August</option>
-                        <option value="09">September</option>
-                    </select>
-                </div>
-                <button id="generate-calendar" class="btn btn-success mx-2">Generate Calendar</button>
-            </div>
-            <div id="calendar" class="d-flex flex-wrap justify-content-center"></div>
-        </main>
+                <div id="calendar" class="d-flex flex-wrap justify-content-center"></div>
+            </main>
+        </div>
     </div>
     <script src="calendar.js"></script>
 </body>

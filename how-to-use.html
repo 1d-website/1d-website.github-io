@@ -30,7 +30,15 @@
         }
         .container {
             margin-left: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% - 80px);
+            height: 100vh;
+        }
+        .content {
             max-width: 800px;
+            width: 100%;
             padding: 20px;
         }
         .btn {
@@ -51,28 +59,30 @@
         <button onclick="location.href='/admin.html'"><span class="material-icons">admin_panel_settings</span></button>
     </div>
     <div class="container">
-        <header>
-            <h1>How to Use</h1>
-        </header>
-        <main>
-            <section>
-                <h2>Admin Login</h2>
-                <p>To access the admin panel, click on the "Admin Login" button on the homepage. Enter the passcode. And you will be sent to the admin panel.</p>
-            </section>
-            <section>
-                <h2>Admin Panel</h2>
-                <p>In the admin panel, you can add homework by filling out the form with the due date, subject, and homework details. Only authorized phone numbers can add homework.</p>
-                <p>You can also view and delete existing homework from the list.</p>
-            </section>
-            <section>
-                <h2>Homework List</h2>
-                <p>On the homepage, you can view the homework list by selecting the year and month, then clicking the "Generate Calendar" button. Click on a date to view the homework details for that day.</p>
-            </section>
-            <section>
-                <h2>Homework Details</h2>
-                <p>On the homework details page, you can view the homework assigned for the selected date.</p>
-            </section>
-        </main>
+        <div class="content">
+            <header>
+                <h1>How to Use</h1>
+            </header>
+            <main>
+                <section>
+                    <h2>Admin Login</h2>
+                    <p>To access the admin panel, click on the "Admin Login" button on the homepage. Enter the passcode. And you will be sent to the admin panel.</p>
+                </section>
+                <section>
+                    <h2>Admin Panel</h2>
+                    <p>In the admin panel, you can add homework by filling out the form with the due date, subject, and homework details. Only authorized phone numbers can add homework.</p>
+                    <p>You can also view and delete existing homework from the list.</p>
+                </section>
+                <section>
+                    <h2>Homework List</h2>
+                    <p>On the homepage, you can view the homework list by selecting the year and month, then clicking the "Generate Calendar" button. Click on a date to view the homework details for that day.</p>
+                </section>
+                <section>
+                    <h2>Homework Details</h2>
+                    <p>On the homework details page, you can view the homework assigned for the selected date.</p>
+                </section>
+            </main>
+        </div>
     </div>
 </body>
 </html>
