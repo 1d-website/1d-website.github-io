@@ -70,26 +70,18 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const dbRef = firebase.database().ref('/form/example');
+            const dbRef = firebase.database().ref('/form');
             dbRef.once('value', (snapshot) => {
                 const data = snapshot.val();
-                if (data && data.url) {
-                    const formsDiv = document.getElementById('forms');
-                    const formElement = document.createElement('form');
-                    formElement.action = data.url;
-                    formElement.method = 'post';
-                    formElement.innerHTML = `
-                        <div class="form-group">
-                            <label for="name">Name:</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <button type="submit">Go to Example Form</button>
-                    `;
-                    formsDiv.appendChild(formElement);
+                const formsDiv = document.getElementById('forms');
+                for (const key in data) {
+                    const url = data[key];
+                    const button = document.createElement('button');
+                    button.innerText = key;
+                    button.onclick = function() {
+                        window.location.href = url;
+                    };
+                    formsDiv.appendChild(button);
                 }
             });
         });
