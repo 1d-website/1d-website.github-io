@@ -11,6 +11,41 @@
     <script src="form_scripts.js" defer></script>
     <base href="/">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .sidebar {
+            width: 60px;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .sidebar button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .container {
+            margin-left: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: calc(100% - 80px);
+            height: 100vh;
+        }
+        .content {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="sidebar">
@@ -26,17 +61,7 @@
                 <h1>Form</h1>
             </header>
             <main>
-                <form id="firebaseForm">
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <button type="button" id="submitButton">Submit</button>
-                </form>
+                <div id="forms"></div>
             </main>
             <footer>
                 <!-- 版權聲明已移除 -->
@@ -49,23 +74,25 @@
             dbRef.once('value', (snapshot) => {
                 const data = snapshot.val();
                 if (data && data.url) {
-                    const submitButton = document.getElementById('submitButton');
-                    submitButton.innerText = 'Go to Example Form';
-                    submitButton.onclick = function() {
-                        window.location.href = data.url;
-                    };
+                    const formsDiv = document.getElementById('forms');
+                    const formElement = document.createElement('form');
+                    formElement.action = data.url;
+                    formElement.method = 'post';
+                    formElement.innerHTML = `
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <button type="submit">Go to Example Form</button>
+                    `;
+                    formsDiv.appendChild(formElement);
                 }
             });
         });
-
-        function submitForm() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const dbRef = firebase.database().ref('/submissions');
-            dbRef.push({ name, email }).then(() => {
-                window.location.href = 'https://third-party-website.com/submit';
-            });
-        }
     </script>
 </body>
 </html>
