@@ -1,68 +1,57 @@
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Forms Page</title>
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Page</title>
     <link rel="stylesheet" href="css.css">
-<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-<script src="form_scripts.js" defer></script>
-<base href="/">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-        body {
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-        .sidebar {
-            width: 60px;
-            padding: 20px;
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-        }
-        .sidebar button {
-            width: 100%;
-            margin-bottom: 10px;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-        }
-        .container {
-            margin-left: 80px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            width: calc(100% - 80px);
-            height: 100vh;
-        }
-        .content {
-            max-width: 800px;
-            width: 100%;
-            padding: 20px;
-        }
-    </style>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="form_scripts.js" defer></script>
+    <base href="/">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<div class="sidebar">
-<button onclick="location.href='/index.html'"><span class="material-icons">home</span></button>
-<button onclick="location.href='/HW.html'"><span class="material-icons">assignment</span></button>
-<button onclick="location.href='/forms_page.html'"><span class="material-icons">description</span></button>
-<button onclick="location.href='/how-to-use.html'"><span class="material-icons">help_outline</span></button>
-<button onclick="location.href='/admin.html'"><span class="material-icons">admin_panel_settings</span></button>
-</div>
-<div class="container">
-<div class="content">
-<header>
-<h1>Form</h1>
-</header>
-<main>
-<div id="forms"></div>
-</main>
-<footer>
-<!-- 版權聲明已移除 -->
-</footer>
-</div>
-</div>
+    <div class="sidebar">
+        <button onclick="location.href='/index.html'"><span class="material-icons">home</span></button>
+        <button onclick="location.href='/HW.html'"><span class="material-icons">assignment</span></button>
+        <button onclick="location.href='/forms_page.html'"><span class="material-icons">description</span></button>
+        <button onclick="location.href='/how-to-use.html'"><span class="material-icons">help_outline</span></button>
+        <button onclick="location.href='/admin.html'"><span class="material-icons">admin_panel_settings</span></button>
+    </div>
+    <div class="container">
+        <div class="content">
+            <header>
+                <h1>Form</h1>
+            </header>
+            <main>
+                <form id="firebaseForm">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <button type="button" onclick="submitForm()">Submit</button>
+                </form>
+            </main>
+            <footer>
+                <!-- 版權聲明已移除 -->
+            </footer>
+        </div>
+    </div>
+    <script>
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const dbRef = firebase.database().ref('/submissions');
+            dbRef.push({ name, email }).then(() => {
+                window.location.href = 'https://third-party-website.com/submit';
+            });
+        }
+    </script>
 </body>
 </html>
