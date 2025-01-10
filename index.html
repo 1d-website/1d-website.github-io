@@ -4,18 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to 1D!</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             display: flex;
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
             margin: 0;
             padding: 0;
         }
         .sidebar {
             width: 200px;
-            background-color: #343a40;
             padding: 20px;
             height: 100vh;
             position: fixed;
@@ -24,15 +20,8 @@
             width: 100%;
             margin-bottom: 10px;
             padding: 10px;
-            background-color: #007bff;
-            color: #fff;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .sidebar button:hover {
-            background-color: #0056b3;
         }
         .container {
             margin-left: 220px;
@@ -42,8 +31,6 @@
         header, footer {
             text-align: center;
             padding: 1em;
-            background-color: #444;
-            color: #fff;
         }
         main {
             margin: 2em auto;
@@ -54,30 +41,16 @@
             margin: 1em;
             padding: 0.5em 1em;
             font-size: 1em;
-            background-color: #007bff;
-            color: #fff;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        button:hover {
-            background-color: #0056b3;
         }
         #announcements {
             margin-top: 2em;
             text-align: left;
         }
         #announcements div {
-            background-color: #333;
             padding: 1em;
             margin-bottom: 1em;
-            border-radius: 5px;
-            color: #fff;
-            transition: background-color 0.3s ease;
-        }
-        #announcements div:hover {
-            background-color: #555;
         }
     </style>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>

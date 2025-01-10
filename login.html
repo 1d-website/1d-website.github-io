@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
-    <link rel="stylesheet" href="style.css">
     <!-- Firebase Configuration -->
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
@@ -13,13 +12,11 @@
     <style>
         body {
             display: flex;
-            background-color: #f8f9fa;
             margin: 0;
             padding: 0;
         }
         .sidebar {
             width: 200px;
-            background-color: #343a40;
             padding: 20px;
             height: 100vh;
             position: fixed;
@@ -28,24 +25,14 @@
             width: 100%;
             margin-bottom: 10px;
             padding: 10px;
-            background-color: #007bff;
-            color: #fff;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .sidebar button:hover {
-            background-color: #0056b3;
         }
         .container {
             margin-left: 220px;
             max-width: 400px;
             width: 100%;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .form-group {
             margin-bottom: 15px;
@@ -63,16 +50,16 @@
         <button onclick="location.href='/how-to-use.html'">How to Use</button>
     </div>
     <div class="container">
-        <header class="my-4">
-            <h1 class="text-center">Admin Login</h1>
+        <header>
+            <h1>Admin Login</h1>
         </header>
-        <main class="d-flex justify-content-center">
-            <form id="loginForm" class="w-100 p-4 rounded shadow-sm">
+        <main>
+            <form id="loginForm">
                 <div class="form-group">
                     <label for="passcode">Passcode:</label>
-                    <input type="password" class="form-control" id="passcode" name="passcode" required placeholder="Enter passcode">
+                    <input type="password" id="passcode" name="passcode" required placeholder="Enter passcode">
                 </div>
-                <button type="submit" class="btn btn-primary btn-block" id="sign-in-button">Login</button>
+                <button type="submit" id="sign-in-button">Login</button>
             </form>
         </main>
     </div>
