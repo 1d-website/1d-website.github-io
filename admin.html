@@ -18,11 +18,15 @@
                 const data = snapshot.val();
                 const homeworkListDiv = document.getElementById('homeworkList');
                 homeworkListDiv.innerHTML = '';
-                for (const key in data) {
-                    const homework = data[key];
-                    const homeworkElement = document.createElement('div');
-                    homeworkElement.innerHTML = `<h2>${key}</h2><p>${homework}</p>`;
-                    homeworkListDiv.appendChild(homeworkElement);
+                for (const month in data) {
+                    for (const day in data[month]) {
+                        for (const subject in data[month][day]) {
+                            const homework = data[month][day][subject];
+                            const homeworkElement = document.createElement('div');
+                            homeworkElement.innerHTML = `<h2>${subject}</h2><p>${homework}</p>`;
+                            homeworkListDiv.appendChild(homeworkElement);
+                        }
+                    }
                 }
             });
         });
