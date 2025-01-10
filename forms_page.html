@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="form_styles.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="form_scripts.js" defer></script>
+    <base href="/">
+    <style>
+        body {
+            display: flex;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #343a40;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .sidebar button:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            margin-left: 220px;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <button onclick="location.href='/index.html'">Home</button>
+        <button onclick="location.href='/HW.html'">Homework List</button>
+        <button onclick="location.href='/forms_page.html'">Forms Page</button>
+        <button onclick="location.href='/how-to-use.html'">How to Use</button>
+        <button onclick="location.href='/admin.html'">Admin Panel</button>
+    </div>
+    <div class="container">
+        <header>
+            <h1>Form</h1>
+        </header>
+        <main>
+            <div id="forms"></div>
+        </main>
+        <footer>
+            <!-- 版權聲明已移除 -->
+        </footer>
+    </div>
+</body>
+</html>

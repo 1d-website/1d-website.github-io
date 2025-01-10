@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to 1D!</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #343a40;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .sidebar button:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            margin-left: 220px;
+            max-width: 800px;
+            padding: 20px;
+        }
+        header, footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #444;
+            color: #fff;
+        }
+        main {
+            margin: 2em auto;
+            text-align: center;
+        }
+        button {
+            display: inline-block;
+            margin: 1em;
+            padding: 0.5em 1em;
+            font-size: 1em;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #announcements {
+            margin-top: 2em;
+            text-align: left;
+        }
+        #announcements div {
+            background-color: #333;
+            padding: 1em;
+            margin-bottom: 1em;
+            border-radius: 5px;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+        #announcements div:hover {
+            background-color: #555;
+        }
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyC-6sYZQI_Lx4dvF0_rwc_8eITtBkx8_Fc",
+            authDomain: "wschwl.firebaseapp.com",
+            databaseURL: "https://wschwl-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "wschwl",
+            storageBucket: "wschwl.firebasestorage.app",
+            messagingSenderId: "385038456722",
+            appId: "1:385038456722:web:ac061e274cd336fe27934b"
+        };
+        firebase.initializeApp(firebaseConfig);
+        
+        function fetchAnnouncements() {
+            const dbRef = firebase.database().ref('/announcement');
+            dbRef.once('value', (snapshot) => {
+                const data = snapshot.val();
+                const announcementsDiv = document.getElementById('announcements');
+                announcementsDiv.innerHTML = '';
+                for (const key in data) {
+                    const announcement = data[key];
+                    const announcementElement = document.createElement('div');
+                    announcementElement.innerHTML = `<h2>${key}</h2><p>${announcement}</p>`;
+                    announcementsDiv.appendChild(announcementElement);
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchAnnouncements);
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <button onclick="location.href='/index.html'">Home</button>
+        <button onclick="location.href='/HW.html'">Homework List</button>
+        <button onclick="location.href='/forms_page.html'">Forms Page</button>
+        <button onclick="location.href='/how-to-use.html'">How to Use</button>
+        <button onclick="location.href='/admin.html'">Admin Panel</button>
+    </div>
+    <div class="container">
+        <header>
+            <h1>Welcome to WSC 1D</h1>
+        </header>
+        <main>
+            <h2>Announcement</h2>
+            <div id="announcements"></div>
+        </main>
+        <footer>
+            <!-- 版權聲明已移除 -->
+        </footer>
+    </div>
+</body>
+</html>

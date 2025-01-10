@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Firebase Configuration -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="firebase-config.js"></script>
+    <base href="/">
+    <style>
+        body {
+            display: flex;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #343a40;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .sidebar button:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            margin-left: 220px;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .btn {
+            width: 100%;
+        }
+        #homeworkList {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <button onclick="location.href='/index.html'">Home</button>
+        <button onclick="location.href='/HW.html'">Homework List</button>
+        <button onclick="location.href='/forms_page.html'">Forms Page</button>
+        <button onclick="location.href='/how-to-use.html'">How to Use</button>
+        <button onclick="location.href='/admin.html'">Admin Panel</button>
+    </div>
+    <div class="container">
+        <header class="my-4">
+            <h1 class="text-center">Admin Panel</h1>
+        </header>
+        <main>
+            <form id="homeworkForm" class="w-50 p-4 bg-grey rounded shadow-sm mx-auto">
+                <div class="form-group">
+                    <label for="dueDate">Due Date:</label>
+                    <input type="date" class="form-control" id="dueDate" name="dueDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" class="form-control" id="subject" name="subject" required placeholder="Enter subject">
+                </div>
+                <div class="form-group">
+                    <label for="homework">Homework:</label>
+                    <input type="text" class="form-control" id="homework" name="homework" required placeholder="Enter homework details">
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Add Homework</button>
+            </form>
+            <div id="homeworkList" class="my-4 p-4 bg-grey rounded shadow-sm"></div>
+        </main>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>

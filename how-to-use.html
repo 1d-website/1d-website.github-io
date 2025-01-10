@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use</title>
+    <link rel="stylesheet" href="style.css">
+    <base href="/">
+    <style>
+        body {
+            display: flex;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #343a40;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .sidebar button:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            margin-left: 220px;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <button onclick="location.href='/index.html'">Home</button>
+        <button onclick="location.href='/HW.html'">Homework List</button>
+        <button onclick="location.href='/forms_page.html'">Forms Page</button>
+        <button onclick="location.href='/how-to-use.html'">How to Use</button>
+        <button onclick="location.href='/admin.html'">Admin Panel</button>
+    </div>
+    <div class="container">
+        <header class="my-4">
+            <h1 class="text-center">How to Use</h1>
+        </header>
+        <main>
+            <section class="my-4">
+                <h2>Admin Login</h2>
+                <p>To access the admin panel, click on the "Admin Login" button on the homepage. Enter the passcode. And you will be sent to the admin panel.</p>
+            </section>
+            <section class="my-4">
+                <h2>Admin Panel</h2>
+                <p>In the admin panel, you can add homework by filling out the form with the due date, subject, and homework details. Only authorized phone numbers can add homework.</p>
+                <p>You can also view and delete existing homework from the list.</p>
+            </section>
+            <section class="my-4">
+                <h2>Homework List</h2>
+                <p>On the homepage, you can view the homework list by selecting the year and month, then clicking the "Generate Calendar" button. Click on a date to view the homework details for that day.</p>
+            </section>
+            <section class="my-4">
+                <h2>Homework Details</h2>
+                <p>On the homework details page, you can view the homework assigned for the selected date.</p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
