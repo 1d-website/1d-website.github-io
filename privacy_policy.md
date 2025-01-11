@@ -55,4 +55,8 @@ This Privacy Policy was last updated on January 11, 2025. If you have any questi
 If you have any questions or require further information about our Privacy Policy, please contact us at:
 - Email: 1dwebsite0info@gmail.com
 
+## Notes
+
+If there’s any argument or question, the privacy policy on the GitHub repository https://github.com/1d-website/1d-website.github.io will be the standard for answering.
+
 We are committed to protecting your privacy and ensuring that your personal information remains secure. Thank you for visiting 1d-website.github.io and trusting us with your privacy.
