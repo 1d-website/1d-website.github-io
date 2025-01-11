@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to 1D!</title>
+    <link rel="stylesheet" href="css.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyC-6sYZQI_Lx4dvF0_rwc_8eITtBkx8_Fc",
+            authDomain: "wschwl.firebaseapp.com",
+            databaseURL: "https://wschwl-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "wschwl",
+            storageBucket: "wschwl.firebasestorage.app",
+            messagingSenderId: "385038456722",
+            appId: "1:385038456722:web:ac061e274cd336fe27934b"
+        };
+        firebase.initializeApp(firebaseConfig);
+        
+        function fetchAnnouncements() {
+            const dbRef = firebase.database().ref('/announcement');
+            dbRef.once('value', (snapshot) => {
+                const data = snapshot.val();
+                const announcementsDiv = document.getElementById('announcements');
+                announcementsDiv.innerHTML = '';
+                for (const key in data) {
+                    const announcement = data[key];
+                    const announcementElement = document.createElement('div');
+                    announcementElement.innerHTML = `<h2>${key}</h2><p>${announcement}</p>`;
+                    announcementsDiv.appendChild(announcementElement);
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchAnnouncements);
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <button onclick="location.href='/index.html'"><span class="material-icons">home</span></button>
+        <button onclick="location.href='/HW.html'"><span class="material-icons">assignment</span></button>
+        <button onclick="location.href='/forms_page.html'"><span class="material-icons">description</span></button>
+        <button onclick="location.href='/how-to-use.html'"><span class="material-icons">help_outline</span></button>
+        <button onclick="location.href='/admin.html'"><span class="material-icons">admin_panel_settings</span></button>
+    </div>
+    <div class="container">
+        <div class="content">
+            <header>
+                <h1>Welcome to WSC 1D</h1>
+            </header>
+            <main>
+                <h2>Announcement</h2>
+                <div id="announcements"></div>
+            </main>
+            <footer>
+                <!-- 版權聲明已移除 -->
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

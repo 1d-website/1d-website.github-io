@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="css.css">
+    <!-- Firebase Configuration -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="firebase-config.js"></script>
+    <base href="/">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dbRef = firebase.database().ref('/2025');
+            dbRef.once('value', (snapshot) => {
+                const data = snapshot.val();
+                const homeworkListDiv = document.getElementById('homeworkList');
+                homeworkListDiv.innerHTML = '';
+                for (const month in data) {
+                    for (const day in data[month]) {
+                        for (const subject in data[month][day]) {
+                            const homework = data[month][day][subject];
+                            const homeworkElement = document.createElement('div');
+                            homeworkElement.innerHTML = `<h2>${subject}</h2><p>${homework}</p>`;
+                            homeworkListDiv.appendChild(homeworkElement);
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <button onclick="location.href='/index.html'"><span class="material-icons">home</span></button>
+        <button onclick="location.href='/HW.html'"><span class="material-icons">assignment</span></button>
+        <button onclick="location.href='/forms_page.html'"><span class="material-icons">description</span></button>
+        <button onclick="location.href='/how-to-use.html'"><span class="material-icons">help_outline</span></button>
+        <button onclick="location.href='/admin.html'"><span class="material-icons">admin_panel_settings</span></button>
+    </div>
+    <div class="container">
+        <div class="content">
+            <header class="my-4">
+                <h1 class="text-center">Admin Panel</h1>
+            </header>
+            <main>
+                <form id="homeworkForm" class="w-50 p-4 bg-grey rounded shadow-sm mx-auto">
+                    <div class="form-group">
+                        <label for="dueDate">Due Date:</label>
+                        <input type="date" class="form-control" id="dueDate" name="dueDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        <input type="text" class="form-control" id="subject" name="subject" required placeholder="Enter subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="homework">Homework:</label>
+                        <input type="text" class="form-control" id="homework" name="homework" required placeholder="Enter homework details">
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block">Add Homework</button>
+                </form>
+                <div id="homeworkList" class="my-4 p-4 bg-grey rounded shadow-sm"></div>
+            </main>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>
