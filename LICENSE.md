@@ -43,3 +43,7 @@ This license shall be governed by and construed in accordance with the laws of t
 ### 8. Entire Agreement
 
 This license constitutes the entire agreement between the repository owner and any individual or entity attempting to use, copy, modify, or distribute the contents of this repository. Any amendments or modifications to this license must be made in writing and signed by the repository owner.
+
+### 9.Notes
+
+If there’s any argument or question, the license in the GitHub repository [1d-website.github.io](http://1d-website.github.io) will be standard license to ace any arguments or questions.
