@@ -2,13 +2,13 @@
 
 ## Overview
 
-This document outlines the custom license terms for the repository sun532818microbit/sun532818microbit.github.io, which hosts the website code for the WSC 1D class. This repository, including all its contents, is protected under the terms of this custom license. Please read the terms carefully before attempting to use, copy, modify, or distribute any part of this repository.
+This document outlines the custom license terms for the repository 1d-website/1d-website.github.io, which hosts the website code for the WSC 1D class. This repository, including all its contents, is protected under the terms of this custom license. Please read the terms carefully before attempting to use, copy, modify, or distribute any part of this repository.
 
 ## License Terms
 
 ### 1. Grant of Rights
 
-Permission is hereby granted solely to the repository owner, sun532818microbit, to use, copy, modify, and distribute the contents of this repository. No other individual or entity is granted any rights or permissions under this license.
+Permission is hereby granted solely to the repository owner, 1d-website, to use, copy, modify, and distribute the contents of this repository. No other individual or entity is granted any rights or permissions under this license.
 
 ### 2. Prohibited Actions
 
@@ -22,7 +22,7 @@ Sublicensing: No rights or permissions granted under this license may be sublice
 Sale: No part of this repository or its contents may be sold, resold, or otherwise made available for financial gain.
 3. Transfer of Rights
 
-The repository owner, sun532818microbit, retains the sole authority to transfer the rights granted under this license to another individual or entity. Any such transfer must be documented in writing and explicitly state the recipient's rights and responsibilities under this license.
+The repository owner, 1d-website, retains the sole authority to transfer the rights granted under this license to another individual or entity. Any such transfer must be documented in writing and explicitly state the recipient's rights and responsibilities under this license.
 
 ### 4. Termination of Rights
 
