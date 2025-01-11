@@ -47,3 +47,4 @@ This license constitutes the entire agreement between the repository owner and a
 ### 9.Notes
 
 If there’s any argument or question, the license in the GitHub repository [1d-website.github.io](http://1d-website.github.io) will be standard license to ace any arguments or questions.
+If you have any question, please contact 1dwebsite0info@gmail.com
