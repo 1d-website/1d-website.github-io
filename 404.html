@@ -7,47 +7,49 @@
     <link rel="stylesheet" href="/css.css">
     <style>
         body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
             font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f8f9fa;
-            color: #333;
+            background-color: #f0f0f0;
         }
         h1 {
-            font-size: 80px;
-            margin-bottom: 20px;
+            font-size: 3em;
+            margin: 0.5em 0;
         }
         p {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-        a {
-            color: #007BFF;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
+            font-size: 1.2em;
+            margin: 0.5em 0;
         }
         footer {
-            margin-top: 50px;
-            font-size: 14px;
-            color: #777;
+            position: absolute;
+            bottom: 20px;
         }
-        .preview-link {
-            margin-top: 30px;
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 1em;
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <h1>404</h1>
-    <p>Bruh, you just entered a 404 page. ✨💅slayyyyyyyyy💅✨.</p>
-    <p><a href="/">Go back to the homepage for ✨💅slayness💅✨</a></p>
-    <div class="preview-link">
-        <p><a href="/public_preview.io-main/index.html">Enter public preview version</a></p>
-    </div>
+    <h1>You dumb, this is a blank page</h1>
+    <p>But you are still ✨💅slayyyyyyyyy💅✨</p>
     <footer>
-        <p>slayyyyyyy</p>
+        <button class="button" onclick="window.location.href='/index.html'">Homepage</button>
+        <button class="button" onclick="window.location.href='/public_preview.io-main/index.html'">public preview version (not finish)</button>
     </footer>
 </body>
 </html>
